@@ -13,10 +13,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "linux_server" {
-    ami = "ami-072f48a9ed4f1bbda"
+    ami = var.ami
     instance_type = "t2.micro"
 }
 
-output "public_ip" {
-    value = aws_instance.linux_server.public_ip
-}
